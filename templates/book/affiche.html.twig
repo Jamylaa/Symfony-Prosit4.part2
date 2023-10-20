@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Livres Publiés</h1>
+
+    <p>Nombre de livres publiés : {{ livresPublies }}</p>
+    <p>Nombre de livres non publiés : {{ livresNonPublies }}</p>
+    
+    <ul>
+        {% if livres %}
+            {% for livre in livres %}
+                <li>
+                {{ livre.title }} - {{ livre.author }}
+ <a href="{{ path('livre_details', {'id': livre.id}) }}">Show</a>
+  </li>
+            {% endfor %}
+        {% else %}
+            <p>No Books found.</p>
+        {% endif %}
+    </ul>
+{% endblock %}
