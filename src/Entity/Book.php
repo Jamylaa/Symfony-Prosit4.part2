@@ -26,10 +26,6 @@ class Book
     #[ORM\Column(nullable: true)]
     private ?bool $published = null;
     private ?Author$author = null;
-    public function __construct()
-    {
-        $this->books = new ArrayCollection();
-    }
     
     public function getRef(): ?int
     {

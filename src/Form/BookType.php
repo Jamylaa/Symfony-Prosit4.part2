@@ -34,8 +34,11 @@ class BookType extends AbstractType
                 'choice_label'=>'username'
             ])
             ->add('Actions',UrlType::class,[
-                'required' => false,
+        'required' => false,
         'label' => 'Lien vers l\'action',
+        'block_prefix' => 'actions',
+        'edit' => 'Lien vers l\'action',
+        'delete' => 'Lien vers l\'action',
             ])
             ->add('Add',SubmitType::class)
             ;
@@ -47,4 +50,5 @@ class BookType extends AbstractType
             'data_class' => Book::class,
         ]);
     }
+
 }
